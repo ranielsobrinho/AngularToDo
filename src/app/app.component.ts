@@ -8,7 +8,7 @@ import { Todo } from 'src/models/todo.model';
 })
 export class AppComponent {
   public todos: Todo[] = []; // pegando a classe todo.model.ts
-  public title: String = "Minhas tarefas:"
+  public title = 'Minhas tarefas:';
 
   constructor() {
     this.todos.push(new Todo(1, 'Passear com o cachorro', false));
@@ -17,18 +17,20 @@ export class AppComponent {
 
   }
 
+  // tslint:disable-next-line: typedef
   remove(todo: Todo){
     const index = this.todos.indexOf(todo);
     if(index !== -1){
-      this.todos.splice(index, 1)//Aqui recebe o index e depois apaga
-
+      this.todos.splice(index, 1); // Aqui recebe o index e depois apaga
     }
   }
 
+  // tslint:disable-next-line: typedef
   markAsDone(todo: Todo){
     todo.done = true;
   }
 
+  // tslint:disable-next-line: typedef
   markAsUndone(todo: Todo){
     todo.done = false;
   }
