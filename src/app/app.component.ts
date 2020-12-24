@@ -17,4 +17,20 @@ export class AppComponent {
 
   }
 
+  remove(todo: Todo){
+    const index = this.todos.indexOf(todo);
+    if(index !== -1){
+      this.todos.splice(index, 1)//Aqui recebe o index e depois apaga
+
+    }
+  }
+
+  markAsDone(todo: Todo){
+    todo.done = true;
+  }
+
+  markAsUndone(todo: Todo){
+    todo.done = false;
+  }
+
 }
