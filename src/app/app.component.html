@@ -7,3 +7,12 @@
     <button (click)="remove(todo)">REMOVER</button><!--One way data binding-->
   </li>
 </ul>
+
+<form [formGroup]= "form">
+  <fieldset>
+    <label>Tarefa:</label>
+    <input type="text" placeholder="Insira uma tarefa" maxlength="60" formControlName="title">
+    <small *ngIf="form.controls.title.invalid">Este campo deve conter entre 3 e 60 caracteres</small>
+    <button>Adicionar</button>
+  </fieldset>
+</form>
