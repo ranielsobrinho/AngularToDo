@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --color-button: #5e4c5a;
+    --color-background: #ffE7d0;
+    --background-gradient: #55917f;
+    --background-gradient-2: #6bab90;
+    --color-alternative: #e1f0c4;
+}
+body{
+    background-image: linear-gradient(to right, var(--background-gradient), var(--background-gradient-2));
+    color: #ffe2d1;
+}
+button{
+    background: var(--color-button);
+    color: white;
+}
