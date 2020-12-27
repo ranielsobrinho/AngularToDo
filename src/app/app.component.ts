@@ -8,7 +8,7 @@ import { Todo } from 'src/models/todo.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public todos: Todo[] = []; // pegando a classe todo.model.ts
+  public todos: Todo[] = []; // getting todo.model.ts class
   public title = 'Minhas tarefas:';
   public form: FormGroup;
 
@@ -20,6 +20,8 @@ export class AppComponent {
         Validators.required
       ])]
     });
+
+    this.load();
   }
 
   add(): void {
@@ -37,22 +39,30 @@ export class AppComponent {
   remove(todo: Todo): void{
     const index = this.todos.indexOf(todo);
     if (index !== -1){
-      this.todos.splice(index, 1); // Aqui recebe o index e depois apaga
+      this.todos.splice(index, 1); // Get the index e then delete
+      this.save();
     }
   }
 
   markAsDone(todo: Todo): void{
     todo.done = true;
+    this.save();
   }
 
   markAsUndone(todo: Todo): void{
     todo.done = false;
+    this.save();
   }
 
   save(): void{
     const data = JSON.stringify(this.todos);
     localStorage.setItem('todos', data);
     // You can use removeItem to remove an item and clear to remove everything
+  }
+
+  load(): any{
+    const data = localStorage.getItem('todos');
+    this.todos = JSON.parse(data);
   }
 
 }
