@@ -1,16 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 :root{
-    --color-button: #5e4c5a;
-    --color-background: #ffE7d0;
-    --background-gradient: #55917f;
-    --background-gradient-2: #6bab90;
-    --color-alternative: #e1f0c4;
+    --color-button: #fb9039;
+    --background-gradient: #1f3044;
+    --background-gradient-2: #646c79;
+    --text-color: #f7f7f7;
+}
+html{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom, var(--background-gradient), var(--background-gradient-2));
 }
 body{
-    background-image: linear-gradient(to right, var(--background-gradient), var(--background-gradient-2));
-    color: #ffe2d1;
+    width: 60%;
+    color: var(--text-color);
+    text-align: center;
+    font-weight: 300;
+    border-radius: 10px;
 }
 button{
     background: var(--color-button);
-    color: white;
+    color: var(--text-color);
 }
