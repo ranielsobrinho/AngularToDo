@@ -9,7 +9,7 @@ import { Todo } from 'src/models/todo.model';
 })
 export class AppComponent {
   public todos: Todo[] = []; // getting todo.model.ts class
-  public title = 'Minhas tarefas:';
+  public title = 'Minhas tarefas';
   public form: FormGroup;
 
   constructor(private fb: FormBuilder) {
