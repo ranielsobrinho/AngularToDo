@@ -4,6 +4,7 @@
     --background-gradient: #1f3044;
     --background-gradient-2: #646c79;
     --text-color: #f7f7f7;
+    --text-color-in-white: #1f3044;
 }
 html{
     height: 100%;
@@ -23,4 +24,17 @@ body{
 button{
     background: var(--color-button);
     color: var(--text-color);
+    cursor: pointer;
 }
+
+ul{
+    text-align: left;
+    margin: 10px;
+    padding: 10px;
+    list-style: none;
+    background: #fff;
+    color: var(--text-color-in-white);
+    border-radius: 10px;
+    box-shadow: 3px 4px 14px 0px rgba(0, 0, 0, 0.39);
+}
+
