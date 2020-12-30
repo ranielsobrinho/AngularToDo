@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Todo } from 'src/models/todo.model';
+import { faPlusCircle, faTimes, faCheckCircle, faWindowClose, faUndo } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +9,22 @@ import { Todo } from 'src/models/todo.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  public mode: string = 'list';
   public todos: Todo[] = []; // getting todo.model.ts class
-  public title = 'Minhas tarefas';
+  public title = 'Lista de tarefas';
   public form: FormGroup;
+
+  faPlusCircle = faPlusCircle;
+  faTimes = faTimes;
+  faCheckCircle = faCheckCircle;
+  faWindowClose = faWindowClose;
+  faUndo = faUndo;
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       title: ['', Validators.compose([
         Validators.minLength(3),
-        Validators.maxLength(60),
+        Validators.maxLength(50),
         Validators.required
       ])]
     });
@@ -57,6 +65,7 @@ export class AppComponent {
   save(): void{
     const data = JSON.stringify(this.todos);
     localStorage.setItem('todos', data);
+    this.mode = 'list';
     // You can use removeItem to remove an item and clear to remove everything
   }
 
@@ -67,6 +76,10 @@ export class AppComponent {
     } else {
       this.todos = [];
     }
+  }
+
+  changeMode(mode:string): any{
+    this.mode = mode;
   }
 
 }
