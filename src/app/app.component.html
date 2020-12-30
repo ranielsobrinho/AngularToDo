@@ -1,19 +1,36 @@
-<h1>{{title}}</h1>
-<ul>
+<h1 class="title">{{title}}</h1>
+<ul *ngIf="mode=='list'">
   <p *ngIf="todos.length===0"><small>Não existem tarefas para hoje ainda.</small></p>
   <li *ngFor = "let todo of todos">
-    {{todo.id}} - {{todo.title}}
-    <button *ngIf="!todo.done" (click)="markAsDone(todo)">CONCLUIR</button>
-    <button *ngIf="todo.done"(click)="markAsUndone(todo)">REFAZER</button> |
-    <button (click)="remove(todo)">REMOVER</button><!--One way data binding-->
+    {{todo.title}}
+    <button *ngIf="!todo.done" (click)="markAsDone(todo)">
+      <fa-icon [icon]="faCheckCircle"></fa-icon>
+    </button>
+    <button *ngIf="todo.done"(click)="markAsUndone(todo)">
+      <fa-icon [icon]="faUndo"></fa-icon>
+    </button>
+    <button (click)="remove(todo)">
+      <fa-icon [icon]="faWindowClose"></fa-icon>
+    </button>
   </li>
 </ul>
 
-<form [formGroup]= "form">
-  <fieldset>
-    <label>Tarefa:</label>
-    <input type="text" placeholder="Insira uma tarefa" maxlength="60" formControlName="title">
-    <small *ngIf="form.controls.title.invalid && !form.controls.title.pristine">Este campo deve conter entre 3 e 60 caracteres</small>
-    <button [disabled]="form.invalid" (click)="add()">Adicionar</button>
-  </fieldset>
-</form>
+<div id="modal" *ngIf="mode=='add'">
+  <h1 class="center">Nova Tarefa</h1>
+  <form [formGroup]= "form">
+    <input type="text" placeholder="Insira uma tarefa" maxlength="50" formControlName="title">
+    <small *ngIf="form.controls.title.invalid && !form.controls.title.pristine" class="danger">Este campo deve conter entre 3 e 50 caracteres</small>
+    <p class="center">
+      <button class="button" [disabled]="form.invalid" (click)="add()">Adicionar</button>
+    </p>
+  </form>
+</div>
+
+<button class="add-button button" (click)="changeMode('add')" *ngIf="mode=='list'">
+  <fa-icon [icon]="faPlusCircle"></fa-icon>
+  NOVA TAREFA
+</button>
+<button class="add-button button" (click)="changeMode('list')" *ngIf="mode=='add'">
+  <fa-icon [icon]="faTimes"></fa-icon>
+  CANCELAR
+</button>
