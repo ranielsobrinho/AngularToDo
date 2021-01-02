@@ -1,4 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+/* --------------------------------
+Site:       TodoAng
+CSS author: Raniel Sobrinho
+-------------------------------- */
 :root{
     --color-button: #fb9039;
     --background-gradient: #1f3044;
@@ -19,7 +22,6 @@ body{
     color: var(--text-color);
     text-align: center;
     font-weight: 300;
-    border-radius: 10px;
 }
 
 small{
@@ -46,10 +48,15 @@ ul{
 li{
     padding: 15px;
     margin: 10px;
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-style: italic;
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
+
+li:last-child{
+    border-bottom: none;
+}
+
 
 li>button{
     border: none;
@@ -118,3 +125,5 @@ input{
 .center{
     text-align: center;
 }
+
+@media ()
