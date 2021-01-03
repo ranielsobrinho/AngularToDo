@@ -16,6 +16,7 @@ html{
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(to bottom, var(--background-gradient), var(--background-gradient-2));
+    box-sizing: border-box;
 }
 body{
     width: 60%;
@@ -94,7 +95,7 @@ li>button:hover{
 
 #modal{
     text-align: left;
-    color: #000;
+    color: var(--text-color-in-white);
     margin: 10px;
     padding: 10px;
     background: #ffff;
@@ -126,4 +127,38 @@ input{
     text-align: center;
 }
 
-@media ()
+@media (max-width: 700px){
+    body{
+        width: 80%;
+        font-weight: 200;
+    }
+
+    .title{
+        font-size: 2rem;
+    }
+
+    ul{
+        margin: 5px;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+    li{
+        margin: 5px;
+        font-size: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    li>button{
+        font-size: .8rem;
+        opacity: 1;
+    }
+
+    #modal>h1{
+        font-weight: 200;
+    }
+
+    input{
+        line-height: 30px;
+    }
+}
