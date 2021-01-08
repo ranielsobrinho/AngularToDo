@@ -9,6 +9,13 @@ CSS author: Raniel Sobrinho
     --text-color: #f7f7f7;
     --text-color-in-white: #1f3044;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
 html{
     height: 100%;
     width: 100%;
@@ -52,6 +59,8 @@ li{
     font-size: 1.3rem;
     font-style: italic;
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
 }
 
 li:last-child{
@@ -86,7 +95,7 @@ li>button:hover{
     color: var(--text-color);
     cursor: pointer;
     border: none;
-    margin-left: 5px;
+    margin: 5px;
     padding: 10px 20px;
     border-radius: 30px;
     font-size: 1rem;
@@ -127,6 +136,10 @@ input{
     text-align: center;
 }
 
+li>p{
+    width:90%;
+}
+
 @media (max-width: 700px){
     body{
         width: 80%;
@@ -144,14 +157,22 @@ input{
     }
 
     li{
+        display: flex;
+        align-items: center;
         margin: 5px;
         font-size: 1rem;
         border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     }
 
+    li>p{
+        font-size: 14px;
+        width:90%
+    }
+
     li>button{
         font-size: .8rem;
         opacity: 1;
+        float: right;
     }
 
     #modal>h1{
