@@ -2,7 +2,7 @@
 <ul *ngIf="mode=='list'">
   <p *ngIf="todos.length===0"><small>Não existem tarefas para hoje ainda.</small></p>
   <li *ngFor = "let todo of todos">
-    {{todo.title}}
+    <p>{{todo.title}}</p>
     <button *ngIf="!todo.done" (click)="markAsDone(todo)">
       <fa-icon [icon]="faCheckCircle"></fa-icon>
     </button>
@@ -18,8 +18,8 @@
 <div id="modal" *ngIf="mode=='add'">
   <h1 class="center">Nova Tarefa</h1>
   <form [formGroup]= "form">
-    <input type="text" placeholder="Insira uma tarefa" maxlength="50" formControlName="title" autofocus>
-    <small *ngIf="form.controls.title.invalid && !form.controls.title.pristine" class="danger">Este campo deve conter entre 3 e 50 caracteres</small>
+    <input type="text" placeholder="Insira uma tarefa" maxlength="45" formControlName="title" autofocus>
+    <small *ngIf="form.controls.title.invalid && !form.controls.title.pristine" class="danger">Este campo deve conter entre 3 e 45 caracteres</small>
     <p class="center">
       <button class="button" [disabled]="form.invalid" (click)="add()">Adicionar</button>
     </p>
