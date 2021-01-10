@@ -9,7 +9,7 @@ import { faPlusCircle, faTimes, faCheckCircle, faWindowClose, faUndo } from '@fo
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public mode: string = 'list';
+  public mode = 'list';
   public todos: Todo[] = []; // getting todo.model.ts class
   public title = 'Lista de tarefas';
   public form: FormGroup;
@@ -78,7 +78,7 @@ export class AppComponent {
     }
   }
 
-  changeMode(mode:string): any{
+  changeMode(mode): any{
     this.mode = mode;
   }
 
