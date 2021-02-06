@@ -36,6 +36,7 @@ small{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: 550;
 }
 
 .title{
@@ -145,6 +146,10 @@ li>p{
 
     .title{
         font-size: 2rem;
+    }
+    small{
+        justify-content: center;
+        align-items: center;
     }
 
     ul{
