@@ -1,6 +1,6 @@
 <h1 class="title">{{title}}</h1>
 <ul *ngIf="mode=='list'">
-  <p *ngIf="todos.length===0"><small>Não existem tarefas para hoje ainda.</small></p>
+  <p *ngIf="todos.length===0"><small>Sem tarefas para hoje.</small></p>
   <li *ngFor = "let todo of todos">
     <p>{{todo.title}}</p>
     <button *ngIf="!todo.done" (click)="markAsDone(todo)">
