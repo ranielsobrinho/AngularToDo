@@ -2,17 +2,22 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Todo } from 'src/models/todo.model';
 import { faPlusCircle, faTimes, faCheckCircle, faWindowClose, faUndo } from '@fortawesome/free-solid-svg-icons';
-
+import {trigger, transition, useAnimation} from '@angular/animations';
+import {bounce} from 'ng-animate';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [
+    trigger('bounce', [transition('* => *', useAnimation(bounce))])
+  ],
 })
 export class AppComponent {
   public mode = 'list';
   public todos: Todo[] = []; // getting todo.model.ts class
   public title = 'Lista de tarefas';
   public form: FormGroup;
+  public bounce: any;
 
   faPlusCircle = faPlusCircle;
   faTimes = faTimes;

@@ -15,7 +15,7 @@
   </li>
 </ul>
 
-<div id="modal" *ngIf="mode=='add'">
+<div id="modal" *ngIf="mode=='add'" [@bounce]="bounce">
   <h1 class="center">Nova Tarefa</h1>
   <form [formGroup]= "form">
     <input type="text" placeholder="Insira uma tarefa" maxlength="45" formControlName="title" autofocus>
