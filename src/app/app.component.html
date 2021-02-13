@@ -2,7 +2,7 @@
 <ul *ngIf="mode=='list'">
   <p *ngIf="todos.length===0"><small>Sem tarefas para hoje.</small></p>
   <li *ngFor = "let todo of todos">
-    <p>{{todo.title}}</p>
+    <p [ngClass]="{'done': todo.done == true}">{{todo.title}}</p>
     <button *ngIf="!todo.done" (click)="markAsDone(todo)">
       <fa-icon [icon]="faCheckCircle"></fa-icon>
     </button>
