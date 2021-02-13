@@ -138,6 +138,10 @@ li>p{
     width:90%;
 }
 
+.done{
+    text-decoration: line-through;
+}
+
 @media (max-width: 700px){
     body{
         width: 100%;
