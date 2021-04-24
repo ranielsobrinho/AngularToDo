@@ -9,6 +9,7 @@ import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormDialogComponent } from './pages/form-dialog/form-dialog.component';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -20,9 +21,10 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
     BrowserModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]
