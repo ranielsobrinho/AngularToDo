@@ -1,6 +1,11 @@
-<mat-toolbar color="primary">
+<div class="layout-box">
+  <mat-toolbar color="primary">
     <mat-toolbar-row>
-      <span>Custom Toolbar</span>
+      <span>{{ title }}</span>
     </mat-toolbar-row>
   </mat-toolbar>
+  <div class="page-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
   
