@@ -8,7 +8,6 @@ import { faPlusCircle, faTimes, faCheckCircle, faWindowClose, faUndo } from '@fo
 })
 export class AppComponent {
   public mode = 'list';
-  public title = 'Lista de tarefas';
   public form: FormGroup;
 
   // *FontAwesome Icons
