@@ -1,0 +1,9 @@
+.mat-card{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+
+p{
+    max-width: 29rem;
+}
