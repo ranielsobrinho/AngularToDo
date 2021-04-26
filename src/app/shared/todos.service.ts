@@ -1,13 +1,22 @@
-import { identifierModuleUrl } from '@angular/compiler';
 import { Injectable } from '@angular/core';
+
 import { Todo } from 'src/models/todo.model';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodosService {
   public todos: Todo[] = [];
-  constructor() { }
+  constructor(private snackBar: MatSnackBar) { }
+
+  showMessage(msg: string): void {
+    this.snackBar.open(msg, 'X', {
+      duration: 3000,
+      horizontalPosition: 'end',
+      verticalPosition: 'top'
+    });
+  }
 
   add(title: string): any {
     const newLenght = this.todos.push(new Todo(title, false));
@@ -26,16 +35,17 @@ export class TodosService {
     this.save();
   }
 
+  markAsUndone(todo: Todo): void{
+    todo.done = false;
+    this.save();
+  }
+
   update(id: number, title: string): any{
     const todo = this.todos[id];
     todo.title = title;
     this.save();
   }
 
-  markAsUndone(todo: Todo): void{
-    todo.done = false;
-    this.save();
-  }
 
   save(): void{
     const data = JSON.stringify(this.todos);
