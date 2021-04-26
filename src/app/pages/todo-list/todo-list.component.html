@@ -1,1 +1,12 @@
-<p>todo-list works!</p>
+<div class="add-todo">
+    <form [formGroup]="form">
+        <mat-form-field appearance="legacy" class="input">
+            <mat-label>Adicione uma tarefa</mat-label>
+            <input matInput type="text" formControlName="title">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button color="primary" (click)="addTodo()" [disabled]="form.invalid"><mat-icon>add</mat-icon>Add</button>
+</div>
+<div class="todo-list">
+    
+</div>
