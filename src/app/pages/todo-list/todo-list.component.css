@@ -1,0 +1,14 @@
+.add-todo{
+    display: flex;
+    align-items: center;
+}
+.input{
+    width: 31.25rem; /* equivale a 500px */
+    margin-right: 10px;
+}
+.mat-raised-button{
+    display: flex;
+    align-items: center;
+    height: 2.1rem;
+    margin-top: -12px;
+}
