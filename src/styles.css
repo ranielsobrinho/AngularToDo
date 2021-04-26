@@ -2,49 +2,20 @@
 Site:       TodoAng
 CSS author: Raniel Sobrinho
 -------------------------------- */
-:root{
-    --color-button: #fb9039;
-    --background-gradient: #1f3044;
-    --background-gradient-2: #646c79;
-    --text-color: #f7f7f7;
-    --text-color-in-white: #1f3044;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-
-html{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(to bottom, var(--background-gradient), var(--background-gradient-2));
-    box-sizing: border-box;
 }
+
+html,body{height: 100%}
+
 body{
-    width: 60%;
-    color: var(--text-color);
-    text-align: center;
-    font-weight: 300;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-small{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 550;
-}
-
-.title{
-    font-size: 3rem;
-    text-shadow: 3px 5px var(--background-gradient);
-}
-
-ul{
+/* ul{
     text-align: left;
     margin: 10px;
     padding: 10px;
@@ -53,9 +24,9 @@ ul{
     color: var(--text-color-in-white);
     border-radius: 10px;
     box-shadow: 3px 4px 14px 0px rgba(0, 0, 0, 0.39);
-}
+} */
 
-li{
+/* li{
     padding: 10px;
     margin: 10px;
     font-size: 1.3rem;
@@ -64,11 +35,6 @@ li{
     display: flex;
     align-items: center;
 }
-
-li:last-child{
-    border-bottom: none;
-}
-
 
 li>button{
     border: none;
@@ -140,15 +106,14 @@ li>p{
 
 .done{
     text-decoration: line-through;
-}
-
+} */
+/* 
 @media (max-width: 700px){
     body{
         width: 100%;
-        font-weight: 200;
     }
 
-    .title{
+    /* .title{
         font-size: 2rem;
     }
     small{
@@ -188,7 +153,5 @@ li>p{
 
     input{
         line-height: 30px;
-    }
-}
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+    } 
+} */
