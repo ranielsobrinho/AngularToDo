@@ -1,1 +1,15 @@
-<p>todo-card works!</p>
+<mat-card>
+    <mat-card-content>
+        <p>
+            {{ title }}
+        </p>
+    </mat-card-content>
+    <div class="button">
+        <button mat-icon-button color="primary" aria-label="Icon to mark as done or undone">
+            <mat-icon>check_circle</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" aria-label="Icon for delete a todo">
+            <mat-icon (click)="exclude()">delete_outline</mat-icon>
+        </button>
+    </div>
+</mat-card>
