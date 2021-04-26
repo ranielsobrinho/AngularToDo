@@ -18,6 +18,10 @@ export class TodosService {
     });
   }
 
+  getAll(): any{
+    return this.load();
+  }
+
   add(title: string): any {
     const newLenght = this.todos.push(new Todo(title, false));
     const index = newLenght - 1;
@@ -56,9 +60,9 @@ export class TodosService {
   load(): any{
     const data = localStorage.getItem('todos');
     if (data) {
-      this.todos = JSON.parse(data);
+      return this.todos = JSON.parse(data);
     } else {
-      this.todos = [];
+      return this.todos = [];
     }
   }
 }
