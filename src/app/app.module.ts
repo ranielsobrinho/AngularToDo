@@ -10,12 +10,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormDialogComponent } from './pages/form-dialog/form-dialog.component';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { MaterialModule } from './material.module';
+import { TodoCardComponent } from './pages/todo-card/todo-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormDialogComponent,
-    routingComponents
+    routingComponents,
+    TodoCardComponent
   ],
   imports: [
     BrowserModule,
