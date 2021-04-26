@@ -8,5 +8,7 @@
     <button mat-raised-button color="primary" (click)="addTodo()" [disabled]="form.invalid"><mat-icon>add</mat-icon>Add</button>
 </div>
 <div class="todo-list">
-    
+    <app-todo-card *ngFor="let todo of todos, index as i"
+                    [title]="todo.title">
+    </app-todo-card>
 </div>
