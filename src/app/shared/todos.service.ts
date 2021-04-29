@@ -34,16 +34,6 @@ export class TodosService {
       this.save();
   }
 
-  markAsDone(todo: Todo): void{
-    todo.done = true;
-    this.save();
-  }
-
-  markAsUndone(todo: Todo): void{
-    todo.done = false;
-    this.save();
-  }
-
   update(id: number, title: string): any{
     const todo = this.todos[id];
     todo.title = title;
