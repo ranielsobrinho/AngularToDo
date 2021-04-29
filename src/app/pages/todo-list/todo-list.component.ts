@@ -35,4 +35,9 @@ export class TodoListComponent {
     this.todosService.showMessage('Adicionado nova tarefa!');
     this.form.reset();
   }
+
+  deleteTodo(id: number): void{
+    this.todosService.remove(id);
+    this.todosService.showMessage('Removido!');
+  }
 }
