@@ -11,3 +11,6 @@ mat-toolbar-row{
     font-weight: 600;
     font-size: 1.7rem;
 }
+mat-toolbar {
+    border-radius: 0 0 5px 5px;
+}
