@@ -10,6 +10,8 @@ export class TodoCardComponent implements OnInit {
   @Input() title: string;
   // tslint:disable-next-line: no-output-rename
   @Output('delete') deleteEvent: EventEmitter<void> = new EventEmitter<void>();
+  // tslint:disable-next-line: no-output-rename
+  @Output('done') doneEvent: EventEmitter<void> = new EventEmitter<void>();
 
   constructor() { }
 
@@ -18,6 +20,10 @@ export class TodoCardComponent implements OnInit {
 
   exclude(): void{
     this.deleteEvent.emit();
+  }
+
+  done(): void{
+    this.doneEvent.emit();
   }
 
 }
