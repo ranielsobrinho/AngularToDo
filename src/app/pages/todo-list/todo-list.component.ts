@@ -40,4 +40,16 @@ export class TodoListComponent {
     this.todosService.remove(id);
     this.todosService.showMessage('Removido!');
   }
+
+  doneTodo(id: number): void{
+    const todo = this.todosService.get(id);
+
+    if (todo.done === true){
+      this.todosService.undone(id);
+      this.todosService.showMessage('Tarefa desfeita. Termine suas tarefas!');
+    }else{
+      this.todosService.done(id);
+      this.todosService.showMessage('Tarefa concluída. Parabéns!');
+    }
+  }
 }
