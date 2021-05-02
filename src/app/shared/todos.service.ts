@@ -22,6 +22,10 @@ export class TodosService {
     return this.load();
   }
 
+  get(id: number): any{
+    return this.todos[id];
+  }
+
   add(title: string): any {
     const newLenght = this.todos.push(new Todo(title, false));
     const index = newLenght - 1;
@@ -40,6 +44,17 @@ export class TodosService {
     this.save();
   }
 
+  done(id: number): void{
+    const todo = this.todos[id];
+    todo.done = true;
+    this.save();
+  }
+
+  undone(id: number): void{
+    const todo = this.todos[id];
+    todo.done = false;
+    this.save();
+  }
 
   save(): void{
     const data = JSON.stringify(this.todos);
