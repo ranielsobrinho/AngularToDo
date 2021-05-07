@@ -11,13 +11,15 @@ import { FormDialogComponent } from './pages/form-dialog/form-dialog.component';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { MaterialModule } from './material.module';
 import { TodoCardComponent } from './pages/todo-card/todo-card.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormDialogComponent,
     routingComponents,
-    TodoCardComponent
+    TodoCardComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
