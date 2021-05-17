@@ -1,5 +1,18 @@
-<p>form-dialog works!</p>
-
+<div class="updateContainer">
+  <h1 mat-dialog-title>Editar tarefa <mat-icon>assignment_turned_in</mat-icon></h1>
+  
+  <div mat-dialog-content>
+    <form [formGroup]= "form">
+  
+      <mat-form-field class="mat-inputs">
+          <mat-label>Tarefa</mat-label>
+          <input type="text" matInput formControlName="title" [(ngModel)]="todo.title">
+          <mat-hint align="end">Mínimo 3 letras</mat-hint>
+      </mat-form-field>
+      
+    </form>
+  </div>
+  
   <div mat-dialog-actions>
     <button mat-stroked-button routerLink='/' color="warn">Cancelar</button>
     <button mat-raised-button (click)="addTodo()" color="accent" [disabled]="form.invalid">Salvar</button>
