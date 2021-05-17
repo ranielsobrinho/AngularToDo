@@ -1,1 +1,7 @@
 <p>form-dialog works!</p>
+
+  <div mat-dialog-actions>
+    <button mat-stroked-button routerLink='/' color="warn">Cancelar</button>
+    <button mat-raised-button (click)="addTodo()" color="accent" [disabled]="form.invalid">Salvar</button>
+  </div>
+</div>
