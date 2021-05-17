@@ -7,8 +7,9 @@
     </form>
     <button mat-raised-button color="primary" (click)="addTodo()" [disabled]="form.invalid"><mat-icon>add</mat-icon>Add</button>
 </div>
-<div class="todo-list">
+<div class="todo-list"> <!-- TODO: Tem que resolver a questão de separar a função dos botões com o de editar -->
     <app-todo-card *ngFor="let todo of todos, index as i"
+                    routerLink = '/{{ i }}'
                     [title]="todo.title"
                     (delete) = "deleteTodo(i)"
                     (done) = "doneTodo(i)"
