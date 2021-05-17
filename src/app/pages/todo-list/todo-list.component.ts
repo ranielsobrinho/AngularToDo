@@ -27,6 +27,7 @@ export class TodoListComponent {
   ngOnInit(): void {
     // Return all todos from the TodoService
     this.todos = this.todosService.getAll();
+    // this.todosService.list().subscribe(dados => this.todos = dados);
   }
 
   addTodo(): any{
