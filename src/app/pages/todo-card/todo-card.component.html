@@ -6,7 +6,8 @@
     </mat-card-content>
     <div class="button">
         <button mat-icon-button color="primary" aria-label="Icon for done/undone a todo">
-            <mat-icon (click)="done()">check_circle</mat-icon>
+            <mat-icon *ngIf="done" (click)="finish()">check_circle</mat-icon>
+            <mat-icon *ngIf="!done" (click)="finish()">done</mat-icon>
         </button>
         <button mat-icon-button color="warn" aria-label="Icon for delete a todo">
             <mat-icon (click)="exclude()">delete</mat-icon>
