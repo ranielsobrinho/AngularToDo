@@ -11,6 +11,7 @@ import { FormDialogComponent } from './pages/form-dialog/form-dialog.component';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { MaterialModule } from './material.module';
 import { TodoCardComponent } from './pages/todo-card/todo-card.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { TodoCardComponent } from './pages/todo-card/todo-card.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     MaterialModule,
+    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
