@@ -10,6 +10,7 @@
 <div class="todo-list">
     <app-todo-card *ngFor="let todo of todos, index as i"
                     [title]="todo.title"
+                    [done]="todo.done"
                     (delete) = "deleteTodo(i)"
                     (done) = "doneTodo(i)"
                     [class.done]="todo.done">
