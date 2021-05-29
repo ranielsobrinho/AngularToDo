@@ -2,13 +2,18 @@ import { Injectable } from '@angular/core';
 
 import { Todo } from 'src/models/todo.model';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodosService {
   public todos: Todo[] = [];
-  constructor(private snackBar: MatSnackBar) { }
+  private readonly API = 'http://localhost:3001/todos';
+
+  constructor(private snackBar: MatSnackBar,
+              private http: HttpClient) { }
 
   showMessage(msg: string): void {
     this.snackBar.open(msg, 'X', {
@@ -18,8 +23,8 @@ export class TodosService {
     });
   }
 
-  getAll(): any{
-    return this.load();
+  getAll(): Observable<Todo[]>{
+    return this.http.get<Todo[]>(this.API);
   }
 
   get(id: number): any{
