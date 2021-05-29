@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class TodoCardComponent implements OnInit {
 
   @Input() title: string;
+  @Input() done: boolean;
   // tslint:disable-next-line: no-output-rename
   @Output('delete') deleteEvent: EventEmitter<void> = new EventEmitter<void>();
   // tslint:disable-next-line: no-output-rename
@@ -22,7 +23,7 @@ export class TodoCardComponent implements OnInit {
     this.deleteEvent.emit();
   }
 
-  done(): void{
+  finish(): void{
     this.doneEvent.emit();
   }
 
