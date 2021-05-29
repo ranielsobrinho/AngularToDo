@@ -25,8 +25,7 @@ export class TodoListComponent {
 
   // tslint:disable-next-line: use-lifecycle-interface
   ngOnInit(): void {
-    // Return all todos from the TodoService
-    this.todos = this.todosService.getAll();
+    this.todosService.getAll().subscribe(dados => this.todos = dados);
   }
 
   addTodo(): any{
