@@ -27,15 +27,13 @@ export class TodosService {
     return this.http.get<Todo[]>(this.API);
   }
 
-  get(id: number): any{
-    return this.todos[id];
+  getById(id: number): Observable<Todo[]>{
+    const url = `${this.API}/${id}`;
+    return this.http.get<Todo[]>(url);
   }
 
-  add(title: string): any {
-    const newLenght = this.todos.push(new Todo(title, false));
-    const index = newLenght - 1;
-    this.save();
-    return index;
+  add(todo: Todo): Observable<Todo[]> {
+    return this.http.post<Todo[]>(this.API, todo);
   }
 
   remove(id: number): void{
@@ -43,10 +41,9 @@ export class TodosService {
       this.save();
   }
 
-  update(id: number, title: string): any{
-    const todo = this.todos[id];
-    todo.title = title;
-    this.save();
+  update(todo: Todo): Observable<Todo>{
+    const url = `${this.API}/${todo.id}`;
+    return this.http.put<Todo>(url, todo);
   }
 
   done(id: number): void{
