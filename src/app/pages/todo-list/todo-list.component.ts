@@ -8,9 +8,14 @@ import { Todo } from 'src/models/todo.model';
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css']
 })
-export class TodoListComponent {
+export class TodoListComponent implements OnInit {
   public form: FormGroup;
   public todos: Todo[] = new Array<Todo>();
+  public todo: Todo = {
+    title: '',
+    done: false
+  };
+
 
   constructor(private fb: FormBuilder,
               private todosService: TodosService) {
@@ -23,32 +28,33 @@ export class TodoListComponent {
                 });
               }
 
-  // tslint:disable-next-line: use-lifecycle-interface
   ngOnInit(): void {
     this.todosService.getAll().subscribe(dados => this.todos = dados);
   }
 
   addTodo(): any{
-    const title = this.form.controls.title.value;
-    this.todosService.add(title);
-    this.todosService.showMessage('Adicionado nova tarefa!');
-    this.form.reset();
+    this.todosService.add(this.todo).subscribe(() => {
+      this.todosService.showMessage('Adicionado nova tarefa!');
+    });
   }
 
   deleteTodo(id: number): void{
-    this.todosService.remove(id);
-    this.todosService.showMessage('Removido!');
+    const strID = String(id);
+    let idTodo = this.todosService.getById(strID).subscribe( dados => idTodo = dados);
+    console.log(idTodo);
+    // this.todosService.remove(idTodo).subscribe(() => {
+    //   this.todosService.showMessage('Removido!');
+    // });
   }
 
   doneTodo(id: number): void{
-    const todo = this.todosService.get(id);
-
-    if (todo.done === true){
-      this.todosService.undone(id);
-      this.todosService.showMessage('Tarefa desfeita. Termine suas tarefas!');
-    }else{
-      this.todosService.done(id);
-      this.todosService.showMessage('Tarefa concluída. Parabéns!');
-    }
+    console.log('Hello world');
+    // if (todo.done === true){
+    //   this.todosService.undone(id);
+    //   this.todosService.showMessage('Tarefa desfeita. Termine suas tarefas!');
+    // }else{
+    //   this.todosService.done(id);
+    //   this.todosService.showMessage('Tarefa concluída. Parabéns!');
+    // }
   }
 }
